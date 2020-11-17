@@ -204,8 +204,8 @@
         var w = innerWidth;
         var h = innerHeight; 
         if(w/h<600/1216){
-            document.body.style.zoom=((w/600)*100)+"%";
+            document.body.style.zoom=((w/600)*70)+"%";
         }else{
-            document.body.style.zoom=((h/1216)*100)+"%";
+            document.body.style.zoom=((h/1216)*70)+"%";
         } 
     }
