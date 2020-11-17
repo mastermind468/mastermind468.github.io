@@ -1,0 +1,110 @@
+body{
+    background-color:rgb(2, 2, 2) ;
+    color: rgb(211, 97, 97);
+    font-weight: 900;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+}
+
+#box {
+  padding: 0px;
+  margin: 0px;
+  width: 600px;
+  height: 1216px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p{
+  color: black;
+  margin: 0px;
+}
+
+.smalldot {
+    height: 30px;
+    width: 30px;
+    background-color:  rgb(97, 91, 91);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .secretdot {
+    height: 50px;
+    width: 50px;
+    background-color:  rgb(97, 91, 91);
+    border-radius: 50%;
+    display: inline-block;
+  } 
+
+.bigdot {
+    height: 90px;
+    width: 90px;
+    background-color: rgb(97, 91, 91);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+ button   {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+ } 
+
+ .selectdot {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+ #kitrino {
+  background-color: rgb(236, 233, 19);
+}
+
+#mple {
+    background-color: rgb(66, 63, 248);
+}
+
+#prasino {
+  background-color: rgb(16, 216, 26);
+}
+
+#kokkino {
+    background-color: rgb(235, 29, 29);
+}
+
+#kafe {
+  background-color: rgb(128, 82, 48);
+}
+
+#mob {
+    background-color: rgb(128, 47, 160);
+}
+
+span{
+  font-size: 255%;
+}
+
+#try{
+  border: 4px solid #fdfdfd;
+}
+
+#footer1,#footer2,#footer3,#footer4,#footer5,#footer6{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#f{
+  animation: mymove 5s infinite;
+}
+  @keyframes mymove {
+    50% {border: 5px solid rgb(255, 255, 255);}
+}

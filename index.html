@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="el" >
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="mastermind, game">
+	<meta name="author" content="db">
+    <title>MASTERMIND</title>
+    <link rel="stylesheet" href="mastermind.css" type="text/css">
+    <script src="mastermind.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
+  </head>
+  <body onload="paixnidi()" onresize="mege8os()" >
+    <div id="box">
+    <table border=0 border-color="white" cellpadding=0 cellspacing=0 width=600 >
+        <col  width=20 span=30 >
+        <tr height=20 >
+         <td  colspan=23 rowspan=5 height=100  width=460 bgcolor="black">
+              <p>
+                 <span style="color:VIOLET">M</span>
+                 <span style="color:rgb(183, 145, 219)">A</span>
+                 <span style="color:blueviolet">S</span>
+                 <span style="color:BLUE">T</span>
+                 <span style="color:GREEN">E</span>
+                 <span style="color:greenyellow">R</span>
+                 <span style="color:YELLOW">M</span>
+                 <span style="color:ORANGE">I</span>
+                 <span style="color:orangered">N</span>
+                 <span style="color:RED">D</span><br> _
+                 <span style="color:YELLOW"class="secretdot"  id="s1">?</span>___
+                 <span style="color:YELLOW"class="secretdot"  id="s2">?</span>___
+                 <span style="color:YELLOW"class="secretdot"  id="s3">?</span>___
+                 <span style="color:YELLOW"class="secretdot"  id="s4">?</span>_
+              </p>
+         </td>
+         <td  width=20 bgcolor="black"></td>
+         <td  width=20 bgcolor="black"></td>
+         <td colspan=5 rowspan=5  width=100 bgcolor="black" id="r"><button onclick="test()" id="try"><span><mark>OK</mark></span></button></td>
+        </tr>
+        <tr height=20 bgcolor="black">
+         <td height=20  bgcolor="black"></td>
+         <td bgcolor="black"></td>
+        </tr>
+        <tr height=20 >
+         <td height=20 bgcolor="black" ></td>
+         <td bgcolor="black"></td>
+        </tr>
+        <tr height=20 >
+         <td height=20 bgcolor="black" ></td>
+         <td bgcolor="black"></td>
+        </tr>
+        <tr height=20 >
+         <td height=20 bgcolor="black" ></td>
+         <td bgcolor="black"></td>
+        </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button onclick="xrwmatismos(this.id)"   class="bigdot" id="81"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="82"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="83"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button   onclick="xrwmatismos(this.id)" class="bigdot" id="84"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a81"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a82"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a83"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a84"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="71"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button onclick="xrwmatismos(this.id)"  class="bigdot"  id="72"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="73"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="74"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a71"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a72"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a73"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a74"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button  onclick="xrwmatismos(this.id)" class="bigdot"  id="61"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="62"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="63"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="64"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a61"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a62"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a63"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a64"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button   onclick="xrwmatismos(this.id)" class="bigdot" id="51"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="52"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="53"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button   onclick="xrwmatismos(this.id)" class="bigdot" id="54"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a51"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a52"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a53"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a54"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button  onclick="xrwmatismos(this.id)" class="bigdot"  id="41"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="42"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button   onclick="xrwmatismos(this.id)" class="bigdot" id="43"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="44"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a41"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a42"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a43"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a44"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button  onclick="xrwmatismos(this.id)" class="bigdot"  id="31"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="32"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="33"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="34"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a31"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a32"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a33"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a34"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="21"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button onclick="xrwmatismos(this.id)"  class="bigdot"  id="22"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="23"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button  onclick="xrwmatismos(this.id)"  class="bigdot" id="24"></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a21"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a22"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a23"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a24"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  ><button class="bigdot" id="11" onclick="xrwmatismos(this.id)"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button class="bigdot" id="12" onclick="xrwmatismos(this.id)"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button class="bigdot" id="13" onclick="xrwmatismos(this.id)"></button></td>
+  <td ></td>
+  <td colspan=5 rowspan=5 ><button class="bigdot" id="14" onclick="xrwmatismos(this.id)" ></button></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a11"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a12"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a13"class="smalldot"></span></td>
+  <td ></td>
+  <td colspan=2 rowspan=2 ><span id="a14"class="smalldot"></span></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+ <tr height=20 >
+  <td height=20  bgcolor=#050505></td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505 >-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505>-</td>
+  <td bgcolor=#050505></td>
+ </tr><p>
+ <tr height=20 >
+  <td colspan=5 rowspan=5 height=100  bgcolor="black"  id="footer1"><button onclick="epilogh('kafe')" ><span id="kafe"class="selectdot"></span></button></td>
+  <td colspan=5 rowspan=5 bgcolor="black" id="footer2" ><button onclick="epilogh('mple')" ><span id="mple"class="selectdot"></span></button></td>
+  <td colspan=5 rowspan=5 bgcolor="black" id="footer3" ><button onclick="epilogh('prasino')" ><span id="prasino"class="selectdot"></span></button></td>
+  <td colspan=5 rowspan=5 bgcolor="black"  id="footer4"><button onclick="epilogh('kokkino')" ><span id="kokkino"class="selectdot"></span></button></td>
+  <td colspan=5 rowspan=5 bgcolor="black"  id="footer5"><button onclick="epilogh('mob')" ><span id="mob"class="selectdot"></span></button></td>
+  <td colspan=5 rowspan=5 bgcolor="black"  id="footer6"><button onclick="epilogh('kitrino')" ><span id="kitrino"class="selectdot"></span></button></td>
+ </tr>
+ <tr height=20 >
+ </tr>
+ <tr height=20 >
+ </tr>
+ <tr height=20 >
+ </tr>
+ <tr height=20 >
+ </tr></p>
+ 
+ 
+    </table>
+    </div>
+  </body>
+</html>    
