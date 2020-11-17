@@ -203,7 +203,7 @@
     function mege8os(){
         var w = innerWidth;
         var h = innerHeight; 
-        if(w/h<600/1216){
+        if(w/h>600/1216){
             document.body.style.zoom=((w/600)*70)+"%";
         }else{
             document.body.style.zoom=((h/1216)*70)+"%";
