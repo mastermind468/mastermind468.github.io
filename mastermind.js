@@ -17,7 +17,7 @@
         }
         for (var i=1; i < 5; i++) {
             kwdikos.push(tuxaioxrwma(0,5));
-        } 
+        }               var lo=document.cookie; console.log(lo);
     }
 
     function epilogh(e){
