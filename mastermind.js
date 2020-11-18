@@ -17,7 +17,7 @@
         }
         for (var i=1; i < 5; i++) {
             kwdikos.push(tuxaioxrwma(0,5));
-        }      
+        }     
     }
 
     function epilogh(e){
@@ -200,12 +200,37 @@
         /*refresh*/location.reload();
     }
      
-    function mege8os(){
+    function mege8os(){var ua = parseUA();var z =100;
+
+        if (ua.mobile) {
+            z=70;
+        }
         var w = innerWidth;
         var h = innerHeight; 
         if(w/h<600/1216){
-            document.body.style.zoom=((w/600)*100)+"%";
+            document.body.style.zoom=((w/600)*z)+"%";
         }else{
-            document.body.style.zoom=((h/1216)*100)+"%";
+            document.body.style.zoom=((h/1216)*z)+"%";
         } 
     }
+
+    function parseUA() {
+        var u = navigator.userAgent;
+        var u2 = navigator.userAgent.toLowerCase();
+        return { 
+            trident: u.indexOf('Trident') > -1, 
+            presto: u.indexOf('Presto') > -1, 
+            webKit: u.indexOf('AppleWebKit') > -1, 
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, 
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), 
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), 
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, 
+            iPhone: u.indexOf('iPhone') > -1, 
+            iPad: u.indexOf('iPad') > -1, 
+            webApp: u.indexOf('Safari') == -1, 
+            iosv: u.substr(u.indexOf('iPhone OS') + 9, 3),
+            weixin: u2.match(/MicroMessenger/i) == "micromessenger",
+            ali: u.indexOf('AliApp') > -1,
+        };
+    }
+    
