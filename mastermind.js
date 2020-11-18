@@ -203,7 +203,7 @@
     function mege8os(){var ua = parseUA();var z =100;
 
         if (ua.mobile) {
-            z=70;
+            z=60;
         }
         var w = innerWidth;
         var h = innerHeight; 
