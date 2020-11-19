@@ -204,7 +204,7 @@
 		var z;
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
-		z=65;
+		z=45;
 		}else{
 		// false for not mobile device
 		z=100;
