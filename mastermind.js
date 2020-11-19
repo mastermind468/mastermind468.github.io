@@ -3,14 +3,12 @@
     var round =1;
     var kwdikos=[];
     var prospa8eia=["a","b","c","d"];
-    var w = innerWidth;
-    var h = innerHeight;
-
+ 
     function paixnidi(){
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
-		w=w*2;
-		h=h*2;	
+		innerWidth=innerWidth *2;
+		innerHeight=innerHeight *2;	
 		}
         mege8os();
         ep = "mple";
@@ -209,6 +207,8 @@
     }
      
     function mege8os(){
+        var w = innerWidth;
+        var h = innerHeight;
         if(w/h<600/1216){
             document.body.style.zoom=((w/600)*100)+"%";
         }else{
