@@ -23,7 +23,8 @@
         }
         for (var i=1; i < 5; i++) {
             kwdikos.push(tuxaioxrwma(0,5));
-        }     
+        }   
+        statistics();  
     }
 
     function epilogh(e){
@@ -215,4 +216,20 @@
             document.body.style.zoom=((h/1216)*z)+"%";
         } 
     }
-	
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbycWBiwxd_TZMZAk-uHeVnZCubmMr0McvCXxiHiA957Tne0T5M/exec';
+
+function statistics(){
+    var form = new FormData();
+    form.append('ip(mastermind)',ip);
+    form.append('innerWidth(mastermind)',innerWidth);
+    form.append('innerHeight(mastermind)',innerHeight);
+    form.append('screenWidth(mastermind)',screen.width);
+    form.append('screenHeight(mastermind)',screen.height);
+    fetch(scriptURL, { method: 'POST', body: form });
+}
+
+var ip;
+function getIP(json) {
+    ip = json.ip;
+  }
