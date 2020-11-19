@@ -3,8 +3,14 @@
     var round =1;
     var kwdikos=[];
     var prospa8eia=["a","b","c","d"];
+	var z=100;
 
     function paixnidi(){
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+		// true for mobile device
+		z=65;
+		window.alert("If not viewed properly, try enabling Desktop Site / Έκδοση για υπολογιστές from your browser settings. Enjoy !");
+		}
         mege8os();
         ep = "mple";
         xrwma = "rgb(66, 63, 248)";
@@ -201,19 +207,12 @@
     }
      
     function mege8os(){
-		var z;
-		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-		// true for mobile device
-		z=65;/*window.alert("If not viewed properly, try enabling Desktop Site / Έκδοση για υπολογιστές from your browser settings. Enjoy !");*/
-		}else{
-		// false for not mobile device
-		z=100;
-		}
-        var w = innerWidth;
+		var w = innerWidth;
         var h = innerHeight; 
         if(w/h<600/1216){
             document.body.style.zoom=((w/600)*z)+"%";
         }else{
             document.body.style.zoom=((h/1216)*z)+"%";
         } 
-    }    
+    }
+	
