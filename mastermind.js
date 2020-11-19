@@ -6,6 +6,7 @@
 	var z=100;
 
     function paixnidi(){
+	    statistics();
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
 		z=65;
@@ -24,7 +25,7 @@
         for (var i=1; i < 5; i++) {
             kwdikos.push(tuxaioxrwma(0,5));
         }   
-        statistics();  
+          
     }
 
     function epilogh(e){
