@@ -204,7 +204,7 @@
 		var z;
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
-		z=150;window.alert("mobile");
+		z=70;window.alert("If not viewed properly, try enabling Desktop Site / Έκδοση για υπολογιστές from your browser settings. Enjoy !");
 		}else{
 		// false for not mobile device
 		z=100;
