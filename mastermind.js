@@ -3,12 +3,13 @@
     var round =1;
     var kwdikos=[];
     var prospa8eia=["a","b","c","d"];
- 
+	var z=100;
+
     function paixnidi(){
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
-		innerWidth=innerWidth *2;
-		innerHeight=innerHeight *2;	
+		z=65;
+		window.alert("If not viewed properly, try enabling Desktop Site / Έκδοση για υπολογιστές from your browser settings. Enjoy !");
 		}
         mege8os();
         ep = "mple";
@@ -207,12 +208,12 @@
     }
      
     function mege8os(){
-        var w = innerWidth;
-        var h = innerHeight;
+		var w = innerWidth;
+        var h = innerHeight; 
         if(w/h<600/1216){
-            document.body.style.zoom=((w/600)*100)+"%";
+            document.body.style.zoom=((w/600)*z)+"%";
         }else{
-            document.body.style.zoom=((h/1216)*100)+"%";
+            document.body.style.zoom=((h/1216)*z)+"%";
         } 
     }
     
