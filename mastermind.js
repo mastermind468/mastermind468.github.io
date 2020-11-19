@@ -201,11 +201,19 @@
     }
      
     function mege8os(){
+		var z;
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+		// true for mobile device
+		z=65;
+		}else{
+		// false for not mobile device
+		z=100;
+		}
         var w = innerWidth;
         var h = innerHeight; 
         if(w/h<600/1216){
-            document.body.style.zoom=((w/600)*100)+"%";
+            document.body.style.zoom=((w/600)*z)+"%";
         }else{
-            document.body.style.zoom=((h/1216)*100)+"%";
+            document.body.style.zoom=((h/1216)*z)+"%";
         } 
     }    
