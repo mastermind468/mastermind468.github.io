@@ -6,12 +6,12 @@
 	var z=100;
 
     function paixnidi(){
-	    statistics();
+	    statistics();/*
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
-		z=99;
+		z=65;
 		window.alert("If not viewed properly, try enabling Desktop Site / Έκδοση για υπολογιστές from your browser settings. Enjoy !");
-		}
+		}*/
         mege8os();
         ep = "mple";
         xrwma = "rgb(66, 63, 248)";
