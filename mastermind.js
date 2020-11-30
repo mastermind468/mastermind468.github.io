@@ -212,8 +212,8 @@
 		var w = innerWidth;
         var h = innerHeight; 
 	 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-			w=screen.width;
-			h=screen.height;
+			w=screen.width*4/3;
+			h=screen.height*4/3;
 		}   
         if(w/h<600/1216){
             document.body.style.zoom=((w/600)*z)+"%";
