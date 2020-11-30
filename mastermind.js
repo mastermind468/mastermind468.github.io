@@ -3,7 +3,7 @@
     var round =1;
     var kwdikos=[];
     var prospa8eia=["a","b","c","d"];
-	var z=100;
+	var z=98;
 
     function paixnidi(){
 	    statistics();/*
@@ -211,6 +211,10 @@
     function mege8os(){
 		var w = innerWidth;
         var h = innerHeight; 
+	 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+			w=w*3/4;
+			h=h*3/4;
+		}   
         if(w/h<600/1216){
             document.body.style.zoom=((w/600)*z)+"%";
         }else{
