@@ -6,7 +6,7 @@
 	var z=98;
 
     function paixnidi(){
-	    statistics();/*
+	    /**//*
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 		// true for mobile device
 		z=65;
@@ -218,19 +218,5 @@
         } 
     }
     
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbycWBiwxd_TZMZAk-uHeVnZCubmMr0McvCXxiHiA957Tne0T5M/exec';
+    /**/
 
-function statistics(){
-    var form = new FormData();
-    form.append('ip(mastermind)',ip);
-    form.append('innerWidth(mastermind)',innerWidth);
-    form.append('innerHeight(mastermind)',innerHeight);
-    form.append('screenWidth(mastermind)',screen.width);
-    form.append('screenHeight(mastermind)',screen.height);
-    fetch(scriptURL, { method: 'POST', body: form });
-}
-
-var ip;
-function getIP(json) {
-    ip = json.ip;
-  }
